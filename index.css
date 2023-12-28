@@ -18,6 +18,10 @@ html {
     user-select: none;
 }
 
+.mono-style {
+    font-family: Consolas, 'Courier New', monospace;
+}
+
 .btn-like {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -146,6 +150,7 @@ textarea::placeholder {
 .main .console-group .console>span {
     display: block;
     width: 100%;
+    white-space: nowrap;
     font-size: .65rem;
-    font-family: 'Cascadia Mono', Consolas, 'JetBrains Mono', 'Courier New', 'Sarasa Mono SC', monospace;
+    font-family: 'Cascadia Mono', Consolas, 'JetBrains Mono', 'Courier New', monospace;
 }

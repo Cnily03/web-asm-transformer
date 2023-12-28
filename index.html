@@ -31,11 +31,11 @@
     <div class="main">
         <div class="input-group">
             <span class="input-group-addon">Start PC</span>
-            <input class="form-input" type="text" name="opt-start-pc" placeholder="0x00000000" value="0x00000000"
+            <input class="form-input mono-style" type="text" name="opt-start-pc" placeholder="0x00000000" value="0x00000000"
                 pattern="0x[0-9a-fA-F]+">
             <span class="input-group-addon">Strict Mode</span>
             <div id="toggle-strict-mode" style="cursor: pointer;">
-                <select class="form-select no-select" title="strict-mode" name="opt-strict-mode"
+                <select class="form-select no-select mono-style" title="strict-mode" name="opt-strict-mode"
                     style="text-align: center; pointer-events: none;">
                     <option value="OFF" selected>OFF</option>
                     <option value="ON">ON</option>
@@ -64,15 +64,21 @@
             <button class="btn" id="btn-asm2hex">ASM -> HEX</button>
         </div>
         <div class="input-group">
-            <textarea class="form-input" type="text" id="bin-output" placeholder="Binary Output"></textarea>
-            <textarea class="form-input" type="text" id="hex-output" placeholder="Hex Output"></textarea>
+            <textarea class="form-input mono-style" wrap="off" type="text" id="bin-output"
+                placeholder="Binary Output"></textarea>
+            <textarea class="form-input mono-style" wrap="off" type="text" id="hex-output"
+                placeholder="Hex Output"></textarea>
         </div>
         <div class="input-group">
             <span class="input-group-addon" style="width: 100%; text-align: center;">Console Output</span>
         </div>
         <div class="columns console-group">
-            <div class="console col-6 form-input" id="console-bin"><span class='no-select'>[Binary Console]</span></div>
-            <div class="console col-6 form-input" id="console-hex"><span class='no-select'>[Hex Console]</span></div>
+            <div class="console col-6 form-input" wrap="off" id="console-bin">
+                <span class='no-select'>[Binary Console]</span>
+            </div>
+            <div class="console col-6 form-input" wrap="off" id="console-hex">
+                <span class='no-select'>[Hex Console]</span>
+            </div>
         </div>
     </div>
     <script src="index.js"></script>
