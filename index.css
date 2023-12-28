@@ -1,0 +1,151 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    --asm-input-height: 20rem;
+}
+
+::selection {
+    background-color: rgba(61, 170, 194, .25);
+}
+
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.btn-like {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #fff;
+    border: .05rem solid #5755d9;
+    border-radius: .1rem;
+    color: #5755d9;
+    display: inline-block;
+    font-size: .8rem;
+    height: 1.8rem;
+    line-height: 1.2rem;
+    outline: 0;
+    padding: .25rem .4rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background .2s, border .2s, box-shadow .2s, color .2s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.btn-group .btn-like {
+    -ms-flex: 1 0 0;
+    flex: 1 0 0;
+}
+
+textarea::placeholder {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.monaco-container .margin-view-overlays {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.fullscreen {
+    display: grid;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background-color: inherit;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.header h1 {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+}
+
+.main {
+    width: 100vw;
+    padding: 50px min(45px, 5vw) 70px min(45px, 5vw);
+}
+
+.main #asm-input-adjust {
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    cursor: default;
+    resize: vertical;
+    background: transparent;
+    border: none;
+    min-height: 20rem;
+    height: 20rem;
+    width: calc(100vw - 2 * min(45px, 5vw) - .45rem - 1px);
+}
+
+.main #asm-input-adjust:focus {
+    outline: none;
+}
+
+.main #asm-input {
+    min-height: 20rem;
+    height: calc(max(20rem, var(--asm-input-height)) + 1px);
+    padding: 0 .45rem 0 .45rem;
+}
+
+.main #asm-input .monaco-container {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+}
+
+.main textarea#bin-output,
+.main textarea#hex-output {
+    resize: vertical;
+    min-height: 15rem;
+}
+
+.columns {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.main .console-group .console {
+    padding: .25rem .4rem;
+    max-height: 10rem !important;
+    height: auto !important;
+    line-height: 1.5 !important;
+    overflow-y: auto;
+}
+
+.main .console-group .console>span {
+    display: block;
+    width: 100%;
+    font-size: .65rem;
+    font-family: 'Cascadia Mono', Consolas, 'JetBrains Mono', 'Courier New', 'Sarasa Mono SC', monospace;
+}

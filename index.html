@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff6e40">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ffffff">
+    <title>ASM Transformer</title>
+    <link rel="stylesheet" href="/lib/third_parties/spectre.css/spectre.min.css" />
+    <link rel="stylesheet" href="/lib/third_parties/spectre.css/spectre-exp.min.css" />
+    <link rel="stylesheet" href="/lib/third_parties/spectre.css/spectre-icons.min.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
+    <script src="transform.js"></script>
+</head>
+
+<body>
+    <div class="fullscreen" id="loading-full">
+        <div class="loading loading-lg"></div>
+    </div>
+    <div class="header">
+        <h1>ASM Transformer</h1>
+    </div>
+    <div class="main">
+        <div class="input-group">
+            <span class="input-group-addon">Start PC</span>
+            <input class="form-input" type="text" name="opt-start-pc" placeholder="0x00000000" value="0x00000000"
+                pattern="0x[0-9a-fA-F]+">
+            <span class="input-group-addon">Strict Mode</span>
+            <div id="toggle-strict-mode" style="cursor: pointer;">
+                <select class="form-select no-select" title="strict-mode" name="opt-strict-mode"
+                    style="text-align: center; pointer-events: none;">
+                    <option value="OFF" selected>OFF</option>
+                    <option value="ON">ON</option>
+                </select>
+            </div>
+            <script>
+                document.getElementById("toggle-strict-mode").addEventListener('click', function (e) {
+                    const el = e.target.children[0];
+                    el.value = el.value === 'ON' ? 'OFF' : 'ON';
+                    el.dispatchEvent(new Event('change'));
+                });
+            </script>
+        </div>
+
+        <div class="btn-group btn-group-block">
+            <button class="btn" id="btn-clear">Clear Output</button>
+        </div>
+
+        <div class="form-input" id="asm-input">
+            <textarea type="text" id="asm-input-adjust" title="asm-code" readonly></textarea>
+            <div class="monaco-container" id="monaco-container"></div>
+        </div>
+
+        <div class="btn-group btn-group-block">
+            <button class="btn" id="btn-asm2bin">ASM -> BIN</button>
+            <button class="btn" id="btn-asm2hex">ASM -> HEX</button>
+        </div>
+        <div class="input-group">
+            <textarea class="form-input" type="text" id="bin-output" placeholder="Binary Output"></textarea>
+            <textarea class="form-input" type="text" id="hex-output" placeholder="Hex Output"></textarea>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" style="width: 100%; text-align: center;">Console Output</span>
+        </div>
+        <div class="columns console-group">
+            <div class="console col-6 form-input" id="console-bin"><span class='no-select'>[Binary Console]</span></div>
+            <div class="console col-6 form-input" id="console-hex"><span class='no-select'>[Hex Console]</span></div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
