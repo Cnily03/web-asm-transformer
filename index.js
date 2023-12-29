@@ -218,9 +218,9 @@
                         '; Assembly code example',
                         '',
                         '_start:',
-                        '  addiu $0, $zero, 0x1234',
+                        '  addiu $1, $zero, 0x1234',
                         '  addiu $s0, $zero, 33',
-                        '  beq   $s0, $0, -3',
+                        '  beq   $s0, $1, -3',
                         '  sll   $zero, $zero, 0',
                         '  j     _start+2',
                         ''
