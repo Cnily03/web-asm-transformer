@@ -178,11 +178,13 @@
          */
         const parseAsmNum = (asm_num_string) => {
             str = asm_num_string.trim().toLowerCase()
-            if (/^#-?\d+$/i.test(str)) return parseInt(str.slice(1), 10)
+            if (/^#[+-]?\d+$/i.test(str)) return parseInt(str.slice(1), 10)
 
             let sign = 1
             if (/^-/i.test(str)) {
                 sign = -1
+                str = str.slice(1)
+            } else if (/^\+/i.test(str)) {
                 str = str.slice(1)
             }
 
