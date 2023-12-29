@@ -371,7 +371,7 @@
     })
     function opt() {
         let startPC = OptStartPCEl.value
-        if (/0x[0-9a-fA-F]+/.test(startPC)) startPC = parseInt(startPC)
+        if (/0x[ 0-9a-fA-F]+/.test(startPC)) startPC = parseInt(startPC.replace(/ /g, ''))
         else startPC = 0
         let strict = OptStrictModeEl.value === "ON"
         return {
